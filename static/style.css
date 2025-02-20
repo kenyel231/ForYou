@@ -37,6 +37,7 @@ div {
   word-wrap: break-word;
   margin: 0 auto;
   box-sizing: border-box;
+  font-size: 12px;
 }
 
 details {
@@ -86,15 +87,15 @@ details[open] > *:not(summary) {
 
 @media (max-width: 768px) {
   div {
-    width: 80%;
+    width: 90%;
   }
-
-  body {
-    overflow: hidden;
+  
+  details {
+    width: 90%;
   }
 
   .container {
-    width: 80%;
+    width: 90%;
     font-size: 10px;
   }
 }
