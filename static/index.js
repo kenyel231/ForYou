@@ -29,4 +29,4 @@ summary.addEventListener('click', (e) => {
     }
 });
 
-console.log("By: KenyelAlexanderRestituyoMontero");
+console.log("By: KenyelAlexanderRestituyoMontero, 2025");
