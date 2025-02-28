@@ -29,4 +29,4 @@ summary.addEventListener('click', (e) => {
     }
 });
 
-console.log("By: KenyelAlexanderRestituyoMontero, 2025");
+console.log("By: https://github.com/kenyel231, 2025");

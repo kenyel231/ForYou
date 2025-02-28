@@ -7,6 +7,8 @@ body {
   background-color: palevioletred;
   gap: 20px;
   overflow-y: hidden;
+  scrollbar-color: #d6336c white;
+  scrollbar-width: auto;
 }
 
 div {
@@ -101,6 +103,10 @@ details[open] > *:not(summary) {
   .container {
     width: 90%;
     font-size: 10px;
+  }
+
+  body {
+    overflow-y: hidden;
   }
 
   h2 {
