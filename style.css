@@ -116,6 +116,18 @@ details[open] > *:not(summary) {
     overflow-y: hidden;
   }
 
+  /* Allow scrolling inside details on small screens but hide the scrollbar */
+  details {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  details::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+
   h2 {
     color: #d6336c;
   }
