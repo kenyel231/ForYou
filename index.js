@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (!summary || !content) return;
 
 
-	details.style.overflow = 'hidden';
+	// Don't override overflow here; allow CSS to control scrolling behavior
 	details.style.transition = 'height 0.28s ease-in-out';
 
 	function closeDetails() {
