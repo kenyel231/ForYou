@@ -57,16 +57,14 @@ a:hover {
 
 details {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  display: block;
   background-color: white;
   width: 80%;
   border-radius: 10px;
   padding: 10px;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, height 0.3s ease;
   word-wrap: break-word;
+  overflow: hidden;
 }
 
 details[open] {

@@ -6,31 +6,36 @@ document.addEventListener('DOMContentLoaded', () => {
 	const content = details.querySelector('p');
 	if (!summary || !content) return;
 
-	details.style.overflowY = 'auto';
-	details.style.transition = 'height 0.3s ease-in-out, opacity 0.3s ease-in-out';
 
-	details.style.height = summary.offsetHeight + 'px';
-	content.style.opacity = '0';
+	details.style.overflow = 'hidden';
+	details.style.transition = 'height 0.28s ease-in-out';
 
-	summary.addEventListener('click', (e) => {
-		e.preventDefault();
+	function closeDetails() {
+		content.style.opacity = '0';
+		details.style.height = summary.offsetHeight + 'px';
+	}
 
-		if (details.hasAttribute('open')) {
-			content.style.opacity = '0';
-			details.style.height = summary.offsetHeight + 'px';
+	function openDetails() {
+		const fullHeight = summary.offsetHeight + content.scrollHeight + 20;
+		details.style.height = fullHeight + 'px';
+		setTimeout(() => { content.style.opacity = '1'; }, 50);
+	}
 
-			setTimeout(() => {
-				details.removeAttribute('open');
-			}, 300);
-		} else {
-			details.setAttribute('open', 'true');
-			const fullHeight = summary.offsetHeight + content.scrollHeight + 20;
-			details.style.height = fullHeight + 'px';
+	// Initialize state
+	if (details.open) {
+		openDetails();
+	} else {
+		closeDetails();
+	}
 
-			setTimeout(() => {
-				content.style.opacity = '1';
-			}, 10);
-		}
+	// Use native toggle event so default behavior remains (keyboard, semantics)
+	details.addEventListener('toggle', () => {
+		if (details.open) openDetails(); else closeDetails();
+	});
+
+	// Recalculate heights on resize
+	window.addEventListener('resize', () => {
+		if (details.open) openDetails(); else closeDetails();
 	});
 
 	console.log('By: https://github.com/kenyel231, 2025');
