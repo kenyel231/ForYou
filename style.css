@@ -113,11 +113,12 @@ details[open] > *:not(summary) {
   }
 
   body {
-    overflow-y: hidden;
+    overflow-y: auto;
   }
 
   /* Allow scrolling inside details on small screens but hide the scrollbar */
   details {
+    max-height: 60vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: none; /* IE and Edge */

@@ -17,7 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function openDetails() {
 		const fullHeight = summary.offsetHeight + content.scrollHeight + 20;
-		details.style.height = fullHeight + 'px';
+		const maxAllowed = Math.floor(window.innerHeight * 0.65);
+		const target = Math.min(fullHeight, maxAllowed);
+		details.style.height = target + 'px';
 		setTimeout(() => { content.style.opacity = '1'; }, 50);
 	}
 
